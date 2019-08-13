@@ -11,6 +11,5 @@ Quer saber mais detalhes? Acesse o [vídeo](https://youtu.be/q8aXy75--Pk).
 ## 📷 Screenshots
 
 | Original| Flutter|
-| --------| -------|
-|<img src="screenshots/original.png" width="360">
-|<img src="screenshots/flutter.png" width="360">|
+| --------|--------|
+|<img src="screenshots/original.png" width="360">|<img src="screenshots/flutter.png" width="300">|
