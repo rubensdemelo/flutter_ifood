@@ -302,7 +302,10 @@ class IfoodFlutter extends StatelessWidget {
               padding: EdgeInsets.all(12),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(4),
-                child: Image.asset('imagens/gourmet.png'),
+                child: Image.asset(
+                  'imagens/gourmet.png',
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
           ],
