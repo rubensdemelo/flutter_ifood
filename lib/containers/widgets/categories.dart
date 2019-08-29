@@ -5,7 +5,7 @@ import 'package:ifood_flutter/widgets/card_image.dart';
 class Categories extends StatelessWidget {
   final List<CardImageItem> items;
 
-  const Categories({Key key, @required this.items}) : super(key: key);
+  const Categories({@required this.items});
 
   List<Widget> _buildCategories() => items
       .map((category) => CardImage(

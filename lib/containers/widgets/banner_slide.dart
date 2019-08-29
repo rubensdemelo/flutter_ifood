@@ -5,7 +5,7 @@ import 'package:ifood_flutter/widgets/card_image.dart';
 class BannerSlide extends StatelessWidget {
   final List<CardImageItem> items;
 
-  const BannerSlide({Key key, @required this.items}) : super(key: key);
+  const BannerSlide({@required this.items});
 
   List<Widget> _buildBanners() => items
       .map((banner) => CardImage(
