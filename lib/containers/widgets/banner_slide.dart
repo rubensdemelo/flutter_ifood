@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:ifood_flutter/core/model/main.dart';
+import 'package:ifood_flutter/widgets/card_image.dart';
 
 class BannerSlide extends StatelessWidget {
-  final List<Widget> items;
+  final List<CardImageItem> items;
 
   const BannerSlide({Key key, @required this.items}) : super(key: key);
+
+  List<Widget> _buildBanners() => items
+      .map((banner) => CardImage(
+            image: banner.image,
+            text: banner.text,
+            format: CardImageType.category,
+            textAlign: CrossAxisAlignment.start,
+          ))
+      .toList();
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +30,7 @@ class BannerSlide extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.only(right: 12),
             scrollDirection: Axis.horizontal,
-            children: items,
+            children: _buildBanners(),
           ),
         ),
       ),

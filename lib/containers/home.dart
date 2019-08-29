@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:ifood_flutter/containers/widgets/main.dart';
 import 'package:ifood_flutter/core/model/main.dart';
@@ -13,22 +12,6 @@ class Home extends StatelessWidget {
     @required this.menus,
     @required this.banners,
   });
-
-  List<Widget> _buildBanners() => banners
-      .map((banner) => CardImage(
-            image: banner.image,
-            text: banner.text,
-            format: CardImageType.category,
-            textAlign: CrossAxisAlignment.start,
-          ))
-      .toList();
-
-  List<Widget> _buildCategories() => categories
-      .map((category) => CardImage(
-            image: category.image,
-            text: category.text,
-          ))
-      .toList();
 
   List<BottomNavigationBarItem> _buildBottomIcon() => menus
       .map((menu) => BottomNavigationBarItem(
@@ -47,8 +30,8 @@ class Home extends StatelessWidget {
           children: <Widget>[
             Location(),
             Search(),
-            BannerSlide(items: _buildBanners()),
-            Categories(items: _buildCategories()),
+            BannerSlide(items: banners),
+            Categories(items: categories),
             GourmetRestaurants(),
           ],
         ),

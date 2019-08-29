@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:ifood_flutter/core/model/main.dart';
+import 'package:ifood_flutter/widgets/card_image.dart';
 
 class Categories extends StatelessWidget {
-  final List<Widget> items;
+  final List<CardImageItem> items;
 
   const Categories({Key key, @required this.items}) : super(key: key);
+
+  List<Widget> _buildCategories() => items
+      .map((category) => CardImage(
+            image: category.image,
+            text: category.text,
+          ))
+      .toList();
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +35,7 @@ class Categories extends StatelessWidget {
           Expanded(
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children: items,
+              children: _buildCategories(),
             ),
           ),
         ],
